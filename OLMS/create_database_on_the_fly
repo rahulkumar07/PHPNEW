@@ -1,0 +1,40 @@
+#to create all database in just one go do the followings::
+# login in to mysql and create a database by following statement without #::
+
+#create database OCCWCC;
+
+#Now exit to the database to shell prompt, cd to this directory and run the command without #:: 
+
+ #mysql --user=root --password=asdfgh --database=OCCWCC <create_database_on_the_fly
+
+
+#replace root with your username for database and passwd for your password 
+
+
+
+#1
+create table students (rollno bigint(11),name varchar(40),passwd varchar(40),branch varchar (10),paasyear smallint (4),primary key (rollno),mobno int(10), emailid varchar(60));
+#2
+Create table c_prog(rollno bigint(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+#3
+Create table java_prog(rollno bigint(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+#4
+Create table faculty(id int (5) UNSIGNED NOT NULL AUTO_INCREMENT,name varchar(40) NOT NULL,primary key (id),passwd varchar (40) NOT NULL, email_id varchar(40) NOT NULL,mobile_no bigint(10) not null );
+#5
+ Create table guest_java_prog(  prog_content mediumtext character set UCS2, prog_result text, date_time timestamp ,ip varchar(16) );
+#6
+ Create table guest_c_prog(  prog_content mediumtext character set UCS2, prog_result text, date_time timestamp ,ip varchar(16) );
+#7
+ Create table guest_cpp_prog(  prog_content mediumtext character set UCS2, prog_result text, date_time timestamp ,ip varchar(16) );
+#8
+ Create table cpp_prog(  prog_content mediumtext character set UCS2, prog_result text, date_time timestamp ,ip varchar(16) );
+#9
+ Create table fac_c_prog(id bigint(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+#10
+ Create table fac_cpp_prog(id bigint(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+#11
+ Create table fac_java_prog(id bigint(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+#12
+  Create table prog_lists(prog_name varchar(1000),date_time timestamp ,prog_sub varchar(10), fac_id bigint(11));
+#13
+  Create table bug_sug(rollno bigint(11),report varchar(1000),bug_sug varchar(10),date_time timestamp , ip varchar (16));

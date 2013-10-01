@@ -1,0 +1,75 @@
+To use these tables in project create a database called OCCWCC remember database name is case sensitive...
+
+to create database use the command..
+create database OCCWCC;
+
+Then create the following tables
+
+
+1. Table containing student info 
+
+create table students (rollno int(11),name varchar(40),passwd varchar(40),branch varchar (10),paasyear smallint (4),primary key (rollno),mobno int(10), emailid varchar(60));
+
+
+2. There will be table each for the listed program C, C++, Java.
+
+Create table c_prog(rollno int(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+
+3.
+Create table java_prog(rollno int(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+
+4.
+
+Create table faculty(id int (11),name varchar(40),primary key (id),passwd varchar (40));
+
+
+
+
+changes ::::
+8/4-
+ 1) Ip tracking in c_prog and java_prog
+     2) Student details includes now mobno and 	emailID
+     3) the data type is phone is bigint {Note it as int supports value upto 2147483647}
+
+
+9/4- 1) Created database for normal compilng c and java
+
+5.
+ Create table guest_java_prog(  prog_content mediumtext character set UCS2, prog_result text, date_time timestamp ,ip varchar(16) );
+6.
+ Create table guest_c_prog(  prog_content mediumtext character set UCS2, prog_result text, date_time timestamp ,ip varchar(16) );
+
+
+12/4- 1) Cpp support provided 
+      2) database table is created for cpp
+7. 
+Create table cpp_prog(rollno int(11),prg_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+8.
+ CREATE TABLE guest_cpp_prog(  prog_content mediumtext CHARACTER SET UCS2, prog_result text, date_time TIMESTAMP ,ip VARCHAR(16) );
+
+14/4-   1) Success to insert current date and time in the mysqlDB....changes made in the table which contains TIMESTAMP
+	
+	2) Changes are -just delete "DEFAULT O" in the table creation  which includes timestamp...
+	
+	3) follow the followings for working perfectly of timestamp
+		please leave the timestamp field while inserting data into the table which contains TIMESTAMP eg.
+mysql_query("INSERT INTO c_prog (rollno,prg_name,prog_content,prog_result,ip)values('$_POST[rollno]','$_POST[prg_name]','$_POST[source]','$_POST[outnerr]','$ip')")
+
+
+20/4- 1) tables created for teachers too...to save their programms for students refrences or for their self
+9. Create table fac_c_prog(id int(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+10. Create table fac_cpp_prog(id int(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+11.Create table fac_java_prog(id int(11),prog_name varchar(500),prog_content mediumtext character set UCS2,prog_result text,date_time timestamp , ip varchar (16));
+
+
+21/4-
+backing up database ...used the following command for db backup
+	rahul@rahul-laptop ~ $ mysqldump --database OCCWCC --user=root --password=asdfgh  >db_back_up
+to restore use the following command
+	rahul@rahul-laptop ~ $mysql < dumpfile
+
+24/4-
+12.   Create table prog_lists(prog_name varchar(1000),date_time timestamp ,prog_sub varchar(10), fac_id int(11));
+
+26/4-
+13.  Create table bug_sug(rollno int(11),report varchar(1000),bug_sug varchar(10),date_time timestamp , ip varchar (16));

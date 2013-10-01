@@ -1,0 +1,17 @@
+#1. students.php
+	a. Rollno should not left blank  --done
+	b. Rollno must be a numeric 
+	c. Password cannot be blank   --done
+	d. No other cheking required
+#2. index.php
+	a. only able to upload a file with ".c" extension
+	b. maximum uplaod size should be 200KB
+	c. textarea data cannot be blank  --done
+	d. Do the same restrictions for other upload like C++ and java  --done
+	e. Not able compile unless we write something in the code area{index.php,javac.php,cpp.php(same for faculty also)} --done
+	f. Not able to compile unless something is uploaded..{same file just as above}  --done
+#3. register.php
+	a. Name should be alpha-numeric only
+	b. No blanks in any field
+	c. EmailID should be correct..
+	d. Mobno should be valid one
